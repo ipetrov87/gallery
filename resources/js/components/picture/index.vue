@@ -5,15 +5,17 @@
                 <div class="card card-default">
                     <div class="card-header">Brawse</div>
                     <div class="card-body">
-                        <div class="row">
-                            
+                        <div class="row">    
                             <div class="col-6" v-for="pic in picture.items" :key="pic.id">
-                                <img 
-                                    :src="pic.picture" 
-                                    :alt="pic.title"
-                                    class="img-fluid">
+                                <a :href="'/picture/' + pic.id">
+                                    <img 
+                                        :src="'/storage/' + pic.picture" 
+                                        :alt="pic.title"
+                                        class="img-fluid">
+                                </a>
                             </div>
                         </div>
+
                         <div class="row" v-if="picture.paginate.total > picture.paginate.per_page">
                             <div class="col-12 pt-3">
                                 <nav>

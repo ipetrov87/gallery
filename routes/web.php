@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('picture', 'PictureController@index');
 Route::get('picture/create', 'PictureController@create');
+Route::get('picture/{picture}', 'PictureController@show');
 Route::post('picture', 'PictureController@store');
