@@ -19,7 +19,7 @@
                     <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">{{ __('Brawse') }}</a>
+                    <a class="nav-link" href="{{ url('/') }}">{{ __('Browse') }}</a>
                 </li>
 
                 <!-- Authentication Links -->
