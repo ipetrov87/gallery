@@ -1753,11 +1753,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    },
-
-
     methods: {
         submitForm: function submitForm(e) {
             var _this = this;
