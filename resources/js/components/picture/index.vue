@@ -15,7 +15,7 @@
                                 </a>
                             </div>
                         </div>
-                            <h3 v-else class="card-title">We just started! Soon there will be lots of pictures ;)</h3>
+                        <h3 v-else class="card-title">We just started! Soon there will be lots of pictures ;)</h3>
 
                         <div class="row" v-if="picture.paginate.total > picture.paginate.per_page">
                             <div class="col-12 pt-3">
