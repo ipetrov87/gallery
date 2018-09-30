@@ -18,8 +18,13 @@ class PictureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()){
+            $page = Picture::paginate(6);
+            return $page;
+        }
+
         return view('picture.index');
     }
 
@@ -36,7 +41,7 @@ class PictureController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\StorePicture  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StorePicture $request)
