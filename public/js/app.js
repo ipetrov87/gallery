@@ -65,6 +65,72 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d29272ca\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue")
+}
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-d29272ca\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d29272ca", Component.options)
+  } else {
+    hotAPI.reload("data-v-d29272ca", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./node_modules/@voerro/vue-tagsinput/src/main.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VoerroTagsInput_vue__ = __webpack_require__("./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VoerroTagsInput_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VoerroTagsInput_vue__);
+
+
+window.VoerroTagsInput = __WEBPACK_IMPORTED_MODULE_0__VoerroTagsInput_vue___default.a;
+
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0__VoerroTagsInput_vue___default.a);
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1633,6 +1699,374 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        elementId: String,
+
+        inputClass: {
+            type: String,
+            default: 'tags-input-default-class'
+        },
+
+        existingTags: {
+            type: Object,
+            default: function _default() {
+                return {};
+            }
+        },
+
+        value: {
+            type: [Array, String],
+            default: function _default() {
+                return [];
+            }
+        },
+
+        typeahead: {
+            type: Boolean,
+            default: false
+        },
+
+        typeaheadActivationThreshold: {
+            type: Number,
+            default: 1
+        },
+
+        typeaheadMaxResults: {
+            type: Number,
+            default: 0
+        },
+
+        placeholder: {
+            type: String,
+            default: 'Add a tag'
+        },
+
+        limit: {
+            type: Number,
+            default: 0
+        },
+
+        onlyExistingTags: {
+            type: Boolean,
+            default: false
+        },
+
+        deleteOnBackspace: {
+            type: Boolean,
+            default: true
+        },
+
+        allowDuplicates: {
+            type: Boolean,
+            default: false
+        },
+
+        validate: {
+            type: Function,
+            default: function _default() {
+                return true;
+            }
+        }
+    },
+
+    data: function data() {
+        return {
+            badgeId: 0,
+            tagBadges: [],
+            tags: [],
+
+            input: '',
+            oldInput: '',
+            hiddenInput: '',
+
+            searchResults: [],
+            searchSelection: 0
+        };
+    },
+    created: function created() {
+        this.tagsFromValue();
+    },
+
+
+    watch: {
+        tags: function tags() {
+            // Updating the hidden input
+            this.hiddenInput = this.tags.join(',');
+
+            // Update the bound v-model value
+            this.$emit('input', this.tags);
+        },
+        value: function value() {
+            this.tagsFromValue();
+        }
+    },
+
+    methods: {
+        escapeRegExp: function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
+        tagFromInput: function tagFromInput() {
+            // If we're choosing a tag from the search results
+            if (this.searchResults.length && this.searchSelection >= 0) {
+                this.tagFromSearch(this.searchResults[this.searchSelection]);
+
+                this.input = '';
+            } else {
+                // If we're adding an unexisting tag
+                var text = this.input.trim();
+
+                // If the new tag is not an empty string and passes validation
+                if (!this.onlyExistingTags && text.length && this.validate(text)) {
+                    this.input = '';
+
+                    // Determine the tag's slug and text depending on if the tag exists
+                    // on the site already or not
+                    var slug = this.makeSlug(text);
+                    var existingTag = this.existingTags[slug];
+
+                    slug = existingTag ? slug : text;
+                    text = existingTag ? existingTag : text;
+
+                    this.addTag(slug, text);
+                }
+            }
+        },
+        tagFromSearchOnClick: function tagFromSearchOnClick(tag) {
+            this.tagFromSearch(tag);
+
+            this.$refs['taginput'].blur();
+        },
+        tagFromSearch: function tagFromSearch(tag) {
+            this.searchResults = [];
+            this.input = '';
+            this.oldInput = '';
+
+            this.addTag(tag.slug, tag.text);
+        },
+        makeSlug: function makeSlug(value) {
+            return value.toLowerCase().replace(/\s/g, '-');
+        },
+        addTag: function addTag(slug, text) {
+            // Check if the limit has been reached
+            if (this.limit > 0 && this.tags.length >= this.limit) {
+                return false;
+            }
+
+            // Attach the tag if it hasn't been attached yet
+            if (!this.tagSelected(slug)) {
+                this.tagBadges.push(text.replace(/\s/g, '&nbsp;'));
+                this.tags.push(slug);
+            }
+        },
+        removeLastTag: function removeLastTag() {
+            if (!this.input.length && this.deleteOnBackspace) {
+                this.removeTag(this.tags.length - 1);
+            }
+        },
+        removeTag: function removeTag(index) {
+            this.tags.splice(index, 1);
+            this.tagBadges.splice(index, 1);
+        },
+        searchTag: function searchTag() {
+            if (this.typeahead === true) {
+                if (this.oldInput != this.input || !this.searchResults.length && this.typeaheadActivationThreshold == 0) {
+                    this.searchResults = [];
+                    this.searchSelection = 0;
+                    var input = this.input.trim();
+
+                    if (input.length && input.length >= this.typeaheadActivationThreshold || this.typeaheadActivationThreshold == 0) {
+                        for (var slug in this.existingTags) {
+                            var text = this.existingTags[slug].toLowerCase();
+
+                            if (text.search(this.escapeRegExp(input.toLowerCase())) > -1 && !this.tagSelected(slug)) {
+                                this.searchResults.push({ slug: slug, text: this.existingTags[slug] });
+                            }
+                        }
+
+                        // Sort the search results alphabetically
+                        this.searchResults.sort(function (a, b) {
+                            if (a.text < b.text) return -1;
+                            if (a.text > b.text) return 1;
+
+                            return 0;
+                        });
+
+                        // Shorten Search results to desired length
+                        if (this.typeaheadMaxResults > 0) {
+                            this.searchResults = this.searchResults.slice(0, this.typeaheadMaxResults);
+                        }
+                    }
+
+                    this.oldInput = this.input;
+                }
+            }
+        },
+        onFocus: function onFocus() {
+            this.searchTag();
+        },
+        hideTypeahead: function hideTypeahead() {
+            var _this = this;
+
+            if (!this.input.length) {
+                this.$nextTick(function () {
+                    _this.ignoreSearchResults();
+                });
+            }
+        },
+        nextSearchResult: function nextSearchResult() {
+            if (this.searchSelection + 1 <= this.searchResults.length - 1) {
+                this.searchSelection++;
+            }
+        },
+        prevSearchResult: function prevSearchResult() {
+            if (this.searchSelection > 0) {
+                this.searchSelection--;
+            }
+        },
+        ignoreSearchResults: function ignoreSearchResults() {
+            this.searchResults = [];
+            this.searchSelection = 0;
+        },
+
+
+        /**
+        * Clear the list of selected tags
+        */
+        clearTags: function clearTags() {
+            this.tags.splice(0, this.tags.length);
+            this.tagBadges.splice(0, this.tagBadges.length);
+        },
+
+
+        /**
+        * Replace the currently selected tags with the tags from the value
+        */
+        tagsFromValue: function tagsFromValue() {
+            if (this.value && this.value.length) {
+                var tags = Array.isArray(this.value) ? this.value : this.value.split(',');
+
+                if (this.tags == tags) {
+                    return;
+                }
+
+                this.clearTags();
+
+                var _iteratorNormalCompletion = true;
+                var _didIteratorError = false;
+                var _iteratorError = undefined;
+
+                try {
+                    for (var _iterator = tags[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        var slug = _step.value;
+
+                        var existingTag = this.existingTags[slug];
+                        var text = existingTag ? existingTag : slug;
+
+                        this.addTag(slug, text);
+                    }
+                } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion && _iterator.return) {
+                            _iterator.return();
+                        }
+                    } finally {
+                        if (_didIteratorError) {
+                            throw _iteratorError;
+                        }
+                    }
+                }
+            } else {
+                if (this.tags.length == 0) {
+                    return;
+                }
+
+                this.clearTags();
+            }
+        },
+
+
+        /**
+        * Check if the tag with the provided slug is already selected
+        */
+        tagSelected: function tagSelected(slug) {
+            var _this2 = this;
+
+            if (this.allowDuplicates) {
+                return false;
+            }
+
+            if (!slug) {
+                return false;
+            }
+
+            var searchSlug = this.makeSlug(slug);
+            var found = this.tags.find(function (value) {
+                return searchSlug == _this2.makeSlug(value);
+            });
+
+            return !!found;
+        }
+    }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/ExampleComponent.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1730,6 +2164,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -1748,10 +2193,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     error: '',
                     file: ''
                 },
+                tags: {
+                    selected: ''
+                    // existing: '',
+                },
                 status: ''
             }
         };
     },
+
+    mounted: function mounted() {
+        // this.loadTags();
+    },
+
 
     methods: {
         submitForm: function submitForm(e) {
@@ -1761,6 +2215,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             data.append('title', this.picture.title.value);
             data.append('description', this.picture.description.value);
             data.append('picture', this.picture.picture.file);
+            data.append('tags', this.picture.tags.selected);
 
             axios.post(e.target.action, data).then(function (response) {
                 _this.resetForm();
@@ -1779,6 +2234,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.picture.title.value = '';
             this.picture.description.value = '';
             this.picture.picture.value = 'Choose file';
+            this.picture.picture.file = '';
             this.resetFormValidation();
         },
         pictureOnChange: function pictureOnChange(e) {
@@ -5853,6 +6309,104 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 })));
 //# sourceMappingURL=bootstrap.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d29272ca\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* tags-input */\n.tags-input {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.tags-input input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    background: transparent;\n    border: none;\n}\n.tags-input span {\n    margin-right: 0.3rem;\n    margin-bottom: 0.2rem;\n}\n.typeahead > span {\n    cursor: pointer;\n    margin-right: 0.3rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ }),
@@ -36654,6 +37208,35 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("tags-input", {
+                      attrs: {
+                        "element-id": "tags",
+                        "input-class": "form-control"
+                      },
+                      model: {
+                        value: _vm.picture.tags.selected,
+                        callback: function($$v) {
+                          _vm.$set(_vm.picture.tags, "selected", $$v)
+                        },
+                        expression: "picture.tags.selected"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "invalid-feedback" }, [
+                      _vm._v(
+                        "\n                                     " +
+                          _vm._s(_vm.picture.tags.error) +
+                          "\n                                "
+                      )
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("div", { staticClass: "custom-file" }, [
                     _c("input", {
@@ -36853,6 +37436,479 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-78127074", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-d29272ca\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { class: _vm.inputClass + " tags-input" },
+      [
+        _vm._l(_vm.tagBadges, function(badge, index) {
+          return _c(
+            "span",
+            { key: index, staticClass: "badge badge-pill badge-light" },
+            [
+              _c("span", { domProps: { innerHTML: _vm._s(badge) } }),
+              _vm._v(" "),
+              _c("i", {
+                staticClass: "tags-input-remove",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.removeTag(index)
+                  }
+                }
+              })
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.input,
+              expression: "input"
+            }
+          ],
+          ref: "taginput",
+          attrs: { type: "text", placeholder: _vm.placeholder },
+          domProps: { value: _vm.input },
+          on: {
+            keydown: [
+              function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
+                $event.preventDefault()
+                return _vm.tagFromInput($event)
+              },
+              function($event) {
+                if (!("button" in $event) && $event.keyCode !== 8) {
+                  return null
+                }
+                return _vm.removeLastTag($event)
+              },
+              function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "down", 40, $event.key, [
+                    "Down",
+                    "ArrowDown"
+                  ])
+                ) {
+                  return null
+                }
+                return _vm.nextSearchResult($event)
+              },
+              function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "up", 38, $event.key, [
+                    "Up",
+                    "ArrowUp"
+                  ])
+                ) {
+                  return null
+                }
+                return _vm.prevSearchResult($event)
+              }
+            ],
+            keyup: [
+              function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "esc", 27, $event.key, "Escape")
+                ) {
+                  return null
+                }
+                return _vm.ignoreSearchResults($event)
+              },
+              _vm.searchTag
+            ],
+            focus: _vm.onFocus,
+            blur: _vm.hideTypeahead,
+            value: _vm.tags,
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.input = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _vm.elementId
+          ? _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.hiddenInput,
+                  expression: "hiddenInput"
+                }
+              ],
+              attrs: { type: "hidden", name: _vm.elementId, id: _vm.elementId },
+              domProps: { value: _vm.hiddenInput },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.hiddenInput = $event.target.value
+                }
+              }
+            })
+          : _vm._e()
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c(
+      "p",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.searchResults.length,
+            expression: "searchResults.length"
+          }
+        ],
+        staticClass: "typeahead"
+      },
+      _vm._l(_vm.searchResults, function(tag, index) {
+        return _c("span", {
+          key: index,
+          staticClass: "badge",
+          class: {
+            "badge-primary": index == _vm.searchSelection,
+            "badge-dark": index != _vm.searchSelection
+          },
+          domProps: { textContent: _vm._s(tag.text) },
+          on: {
+            mousedown: function($event) {
+              $event.preventDefault()
+              _vm.tagFromSearchOnClick(tag)
+            }
+          }
+        })
+      })
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d29272ca", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d29272ca\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d29272ca\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./node_modules/@voerro/vue-tagsinput/src/VoerroTagsInput.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("a2a5f43a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d29272ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./VoerroTagsInput.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d29272ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./VoerroTagsInput.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/lib/addStylesClient.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__("./node_modules/vue-style-loader/lib/listToStyles.js")
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+var options = null
+var ssrIdKey = 'data-vue-ssr-id'
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction, _options) {
+  isProduction = _isProduction
+
+  options = _options || {}
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+  if (options.ssrId) {
+    styleElement.setAttribute(ssrIdKey, obj.id)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/lib/listToStyles.js":
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
 
 /***/ }),
 
@@ -47905,6 +48961,8 @@ Vue.component('example-component', __webpack_require__("./resources/js/component
 Vue.component('picture--index', __webpack_require__("./resources/js/components/picture/index.vue"));
 Vue.component('picture--create', __webpack_require__("./resources/js/components/picture/create.vue"));
 
+Vue.component('tags-input', VoerroTagsInput);
+
 var app = new Vue({
   el: '#app'
 });
@@ -47912,8 +48970,11 @@ var app = new Vue({
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__voerro_vue_tagsinput__ = __webpack_require__("./node_modules/@voerro/vue-tagsinput/src/main.js");
 
 window._ = __webpack_require__("./node_modules/lodash/lodash.js");
 window.Popper = __webpack_require__("./node_modules/popper.js/dist/esm/popper.js").default;
@@ -47970,6 +49031,9 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+
+
 
 /***/ }),
 

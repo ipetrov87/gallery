@@ -20,6 +20,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('picture--index', require('./components/picture/index.vue'));
 Vue.component('picture--create', require('./components/picture/create.vue'));
 
+Vue.component('tags-input', VoerroTagsInput);
+
 const app = new Vue({
     el: '#app'
 });

@@ -35,6 +35,17 @@
                             </div>
 
                             <div class="form-group">
+                                <tags-input element-id="tags"
+                                    v-model="picture.tags.selected"
+                                    input-class="form-control"
+                                    >
+                                    </tags-input>
+                                    <div class="invalid-feedback">
+                                         {{ picture.tags.error }}
+                                    </div>
+                            </div>
+
+                            <div class="form-group">
                                 <div class="custom-file">
                                     <input 
                                         type="file" 
@@ -78,18 +89,26 @@
                         error: '',
                         file: '',
                     },
+                    tags:{
+                        selected: '',
+                        // existing: '',
+                    },
                     status: ''
                 },
             }
         },
 
+        mounted() {
+            // this.loadTags();
+        },
+
         methods:{
             submitForm(e){
-                
                 let data = new FormData();
                 data.append('title', this.picture.title.value);
                 data.append('description', this.picture.description.value);
                 data.append('picture', this.picture.picture.file);
+                data.append('tags', this.picture.tags.selected);
 
                 axios.post(e.target.action, data)
                 .then(response => {
@@ -112,6 +131,7 @@
                 this.picture.title.value = '';
                 this.picture.description.value = '';
                 this.picture.picture.value = 'Choose file';
+                this.picture.picture.file= '';
                 this.resetFormValidation();
             },
 
@@ -130,7 +150,27 @@
                 // reader.onload = e => {
                 //     this.picture.value = e.target.result;
                 // }
-            }
+            },
+
+            // loadTags(){
+            //     axios.get('/tag')
+            //         .then(response => {
+            //             console.log(response);
+            //             // this.picture.tags.existing = response.data;
+
+            //             response.data.forEach(tag =>{
+            //                 // console.log(tag);
+            //                 let slug = tag.slug;
+            //                 let name = tag.name;
+            //                 Object.assign(this.picture.tags.existing,{ slug : name});
+
+            //                 // this.picture.tags.existing.push
+            //             })
+            //         })
+            //         .catch(error => {
+            //             console.log(error);
+            //         });
+            // }
         }
     }
 </script>
