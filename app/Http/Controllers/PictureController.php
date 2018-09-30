@@ -10,7 +10,7 @@ use App\Http\Requests\StorePicture;
 class PictureController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('auth')->only(['create', 'store']);
     }
 
     /**
@@ -66,7 +66,11 @@ class PictureController extends Controller
      */
     public function show(Picture $picture)
     {
-        //
+        // return view('picture.show', [
+        //     'picture' => $picture,
+        // ]);
+
+        return view('picture.show')->with('picture', $picture);
     }
 
     /**

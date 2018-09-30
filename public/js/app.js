@@ -1850,6 +1850,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -36729,10 +36731,12 @@ var render = function() {
               { staticClass: "row" },
               _vm._l(_vm.picture.items, function(pic) {
                 return _c("div", { key: pic.id, staticClass: "col-6" }, [
-                  _c("img", {
-                    staticClass: "img-fluid",
-                    attrs: { src: pic.picture, alt: pic.title }
-                  })
+                  _c("a", { attrs: { href: "/picture/" + pic.id } }, [
+                    _c("img", {
+                      staticClass: "img-fluid",
+                      attrs: { src: "/storage/" + pic.picture, alt: pic.title }
+                    })
+                  ])
                 ])
               })
             ),
