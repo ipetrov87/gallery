@@ -1852,6 +1852,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -36726,20 +36727,29 @@ var render = function() {
           _c("div", { staticClass: "card-header" }, [_vm._v("Brawse")]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c(
-              "div",
-              { staticClass: "row" },
-              _vm._l(_vm.picture.items, function(pic) {
-                return _c("div", { key: pic.id, staticClass: "col-6" }, [
-                  _c("a", { attrs: { href: "/picture/" + pic.id } }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "/storage/" + pic.picture, alt: pic.title }
-                    })
-                  ])
-                ])
-              })
-            ),
+            _vm.picture.items.length > 0
+              ? _c(
+                  "div",
+                  { staticClass: "row" },
+                  _vm._l(_vm.picture.items, function(pic) {
+                    return _c("div", { key: pic.id, staticClass: "col-6" }, [
+                      _c("a", { attrs: { href: "/picture/" + pic.id } }, [
+                        _c("img", {
+                          staticClass: "img-fluid",
+                          attrs: {
+                            src: "/storage/" + pic.picture,
+                            alt: pic.title
+                          }
+                        })
+                      ])
+                    ])
+                  })
+                )
+              : _c("h3", { staticClass: "card-title" }, [
+                  _vm._v(
+                    "We just started! Soon there will be lots of pictures ;)"
+                  )
+                ]),
             _vm._v(" "),
             _vm.picture.paginate.total > _vm.picture.paginate.per_page
               ? _c("div", { staticClass: "row" }, [

@@ -7,8 +7,6 @@
                 <div class="card card-default">
                     <div class="card-header">Preview image</div>
                     <div class="card-body">
-                        {{-- {{ $picture }} --}}
-                        {{-- {{ dd($picture['title']) }} --}}
                         <img class="card-img-top" src="/storage/{{ $picture['picture'] }}" alt="{{ $picture['title'] }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $picture['title'] }}</h5>

@@ -8,8 +8,7 @@
                     <div class="card-header">Here are our latest pictures</div>
                     <div class="card-body">
                         <div class="row">    
-
-                            @foreach ($pictures as $picture)    
+                            @forelse ($pictures as $picture)    
                                 <div class="col-6">
                                     <a href="/picture/{{ $picture['id'] }}">
                                         <img 
@@ -18,7 +17,9 @@
                                             class="img-fluid">
                                     </a>
                                 </div>
-                            @endforeach
+                            @empty
+                                <h3 class="card-title">We just started! Soon there will be lots of pictures ;)</h3>
+                            @endforelse
 
                         </div>
                     </div>

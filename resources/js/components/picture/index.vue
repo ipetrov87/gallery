@@ -5,7 +5,7 @@
                 <div class="card card-default">
                     <div class="card-header">Brawse</div>
                     <div class="card-body">
-                        <div class="row">    
+                        <div class="row" v-if="picture.items.length > 0">    
                             <div class="col-6" v-for="pic in picture.items" :key="pic.id">
                                 <a :href="'/picture/' + pic.id">
                                     <img 
@@ -15,6 +15,7 @@
                                 </a>
                             </div>
                         </div>
+                            <h3 v-else class="card-title">We just started! Soon there will be lots of pictures ;)</h3>
 
                         <div class="row" v-if="picture.paginate.total > picture.paginate.per_page">
                             <div class="col-12 pt-3">
