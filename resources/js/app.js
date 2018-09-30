@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
+Vue.component('picture--index', require('./components/picture/index.vue'));
 Vue.component('picture--create', require('./components/picture/create.vue'));
 
 const app = new Vue({
