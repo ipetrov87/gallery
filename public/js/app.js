@@ -2175,6 +2175,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -2194,8 +2196,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     file: ''
                 },
                 tags: {
-                    selected: ''
-                    // existing: '',
+                    selected: '',
+                    existing: {}
                 },
                 status: ''
             }
@@ -2203,7 +2205,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
-        // this.loadTags();
+        this.loadTags();
     },
 
 
@@ -2229,20 +2231,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.picture.title.error = '';
             this.picture.description.error = '';
             this.picture.picture.error = '';
+            this.picture.tags.error = '';
         },
         resetForm: function resetForm() {
             this.picture.title.value = '';
             this.picture.description.value = '';
             this.picture.picture.value = 'Choose file';
             this.picture.picture.file = '';
+            this.picture.tags.selected = '';
+            this.picture.tags.existing = {};
             this.resetFormValidation();
+            this.loadTags();
         },
         pictureOnChange: function pictureOnChange(e) {
             if (!e.target.files[0]) return;
 
             this.picture.picture.error = '';
-
-            console.log(e);
 
             this.picture.picture.file = e.target.files[0];
             this.picture.picture.value = this.picture.picture.file.name;
@@ -2252,6 +2256,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // reader.onload = e => {
             //     this.picture.value = e.target.result;
             // }
+        },
+        loadTags: function loadTags() {
+            var _this2 = this;
+
+            axios.get('/tag').then(function (response) {
+                response.data.forEach(function (tag) {
+                    var slug = tag.slug;
+                    var obj = {};
+                    obj[slug] = tag.name;
+                    Object.assign(_this2.picture.tags.existing, obj);
+                });
+            }).catch(function (error) {
+                console.log(error);
+            });
         }
     }
 });
@@ -37215,7 +37233,9 @@ var render = function() {
                     _c("tags-input", {
                       attrs: {
                         "element-id": "tags",
-                        "input-class": "form-control"
+                        "input-class": "form-control",
+                        existingTags: _vm.picture.tags.existing,
+                        typeahead: true
                       },
                       model: {
                         value: _vm.picture.tags.selected,

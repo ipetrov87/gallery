@@ -38,6 +38,8 @@
                                 <tags-input element-id="tags"
                                     v-model="picture.tags.selected"
                                     input-class="form-control"
+                                    :existingTags="picture.tags.existing"
+                                    :typeahead="true"
                                     >
                                     </tags-input>
                                     <div class="invalid-feedback">
@@ -91,7 +93,7 @@
                     },
                     tags:{
                         selected: '',
-                        // existing: '',
+                        existing: {},
                     },
                     status: ''
                 },
@@ -99,7 +101,7 @@
         },
 
         mounted() {
-            // this.loadTags();
+            this.loadTags();
         },
 
         methods:{
@@ -125,22 +127,24 @@
                 this.picture.title.error ='';
                 this.picture.description.error = '';
                 this.picture.picture.error = '';
+                this.picture.tags.error = '';
             },
 
             resetForm(){
                 this.picture.title.value = '';
                 this.picture.description.value = '';
                 this.picture.picture.value = 'Choose file';
-                this.picture.picture.file= '';
+                this.picture.picture.file = '';
+                this.picture.tags.selected = '';
+                this.picture.tags.existing = {};
                 this.resetFormValidation();
+                this.loadTags();
             },
 
             pictureOnChange(e){
                 if (!e.target.files[0]) return;
 
                 this.picture.picture.error = '';
-
-                console.log(e);
 
                 this.picture.picture.file = e.target.files[0];
                 this.picture.picture.value= this.picture.picture.file.name;
@@ -152,25 +156,20 @@
                 // }
             },
 
-            // loadTags(){
-            //     axios.get('/tag')
-            //         .then(response => {
-            //             console.log(response);
-            //             // this.picture.tags.existing = response.data;
-
-            //             response.data.forEach(tag =>{
-            //                 // console.log(tag);
-            //                 let slug = tag.slug;
-            //                 let name = tag.name;
-            //                 Object.assign(this.picture.tags.existing,{ slug : name});
-
-            //                 // this.picture.tags.existing.push
-            //             })
-            //         })
-            //         .catch(error => {
-            //             console.log(error);
-            //         });
-            // }
+            loadTags(){
+                axios.get('/tag')
+                    .then(response => {
+                        response.data.forEach(tag =>{
+                            let slug = tag.slug;
+                            let obj = {};
+                            obj[slug] = tag.name;
+                            Object.assign(this.picture.tags.existing, obj);
+                        })
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            }
         }
     }
 </script>
