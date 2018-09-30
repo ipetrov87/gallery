@@ -18,7 +18,7 @@ class CreatePicturesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('title');
             $table->text('description');
-            $table->text('image');
+            $table->text('picture');
             $table->timestamps();
 
             $table->foreign('user_id')

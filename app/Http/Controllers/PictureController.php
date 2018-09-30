@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Picture;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\StorePicture;
 
 class PictureController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class PictureController extends Controller
      */
     public function index()
     {
-        //
+        return view('picture.index');
     }
 
     /**
@@ -24,7 +30,7 @@ class PictureController extends Controller
      */
     public function create()
     {
-        //
+        return view('picture.create');
     }
 
     /**
@@ -33,9 +39,18 @@ class PictureController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePicture $request)
     {
-        //
+        $picture = $request->validated();
+        
+        $path = $request->file('picture')->store(
+            $request->user()->id .'/pictures', 'public'
+        );
+        $picture['picture'] = $path;
+
+        $picture = Auth::user()->pictures()->create($picture);
+
+        return $picture;
     }
 
     /**

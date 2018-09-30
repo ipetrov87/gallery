@@ -7,6 +7,6 @@ $factory->define(App\Picture::class, function (Faker $faker) {
         'user_id' => App\User::inRandomOrder()->first()->id,
         'title' => $faker->words($faker->numberBetween(1, 5), true),
         'description' => $faker->paragraph,
-        'image' => $faker->imageUrl ($faker->numberBetween(150, 1920), $faker->numberBetween(150, 1080)),
+        'picture' => $faker->imageUrl ($faker->numberBetween(150, 1920), $faker->numberBetween(150, 1080)),
     ];
 });
