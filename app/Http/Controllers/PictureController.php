@@ -52,7 +52,7 @@ class PictureController extends Controller
         $path = $request->file('picture')->store(
             $request->user()->id .'/pictures', 'public'
         );
-        $picture['picture'] = $path;
+        $picture['picture'] = '/storage/'. $path;
 
         $tags = explode(',', $picture['tags']);
         

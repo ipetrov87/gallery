@@ -37319,10 +37319,7 @@ var render = function() {
                       _c("a", { attrs: { href: "/picture/" + pic.id } }, [
                         _c("img", {
                           staticClass: "img-fluid",
-                          attrs: {
-                            src: "/storage/" + pic.picture,
-                            alt: pic.title
-                          }
+                          attrs: { src: pic.picture, alt: pic.title }
                         })
                       ])
                     ])

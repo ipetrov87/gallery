@@ -12,7 +12,7 @@
                                 <div class="col-6">
                                     <a href="/picture/{{ $picture['id'] }}">
                                         <img 
-                                            src="/storage/{{ $picture['picture'] }}" 
+                                            src="{{ $picture['picture'] }}" 
                                             alt="{{ $picture['title'] }}"
                                             class="img-fluid">
                                     </a>

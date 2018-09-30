@@ -9,7 +9,7 @@
                             <div class="col-6" v-for="pic in picture.items" :key="pic.id">
                                 <a :href="'/picture/' + pic.id">
                                     <img 
-                                        :src="'/storage/' + pic.picture" 
+                                        :src="pic.picture" 
                                         :alt="pic.title"
                                         class="img-fluid">
                                 </a>
