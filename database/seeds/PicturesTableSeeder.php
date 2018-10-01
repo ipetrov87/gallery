@@ -12,11 +12,13 @@ class PicturesTableSeeder extends Seeder
     public function run()
     {
         $users = \App\User::all();
+        $tags = \App\Tag::all();
 
         for ($i=0; $i < 100; $i++) { 
-            factory(App\Picture::class)->create([
+            $picture = factory(App\Picture::class)->create([
                 'user_id' => $users->random()->id,
             ]);
+            $picture->tags()->attach($tags->random(rand(1,5)));
         }
     }
 }

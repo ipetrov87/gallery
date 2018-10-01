@@ -6,6 +6,7 @@ use App\Picture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorePicture;
+use App\Tag;
 
 class PictureController extends Controller
 {
@@ -21,8 +22,17 @@ class PictureController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()){
-            $page = Picture::paginate(6);
-            return $page;
+            $pictures = new Picture;
+            
+            if ($request->has('tags')) {
+                // $slugs = "'" . implode("','", $request->get('tags')) ."'";
+                // return $slugs;
+                // $pictures = $pictures->tags()->whereIn('slug', [$slugs]);
+                // $pictures = $pictures->tags();
+            }
+
+            return $pictures->paginate(6);
+            // return new Picture->tags()->$pictures->paginate(6);
         }
 
         return view('picture.index');
@@ -51,9 +61,16 @@ class PictureController extends Controller
         $path = $request->file('picture')->store(
             $request->user()->id .'/pictures', 'public'
         );
-        $picture['picture'] = $path;
+        $picture['picture'] = '/storage/'. $path;
 
+        $tags = explode(',', $picture['tags']);
+        
         $picture = Auth::user()->pictures()->create($picture);
+        
+        foreach ($tags as $key => $value) {
+            $tag = Tag::firstOrCreate(['name' => $value, 'slug' => str_slug($value)]);
+            $picture->tags()->attach($tag);
+        }
 
         return $picture;
     }
