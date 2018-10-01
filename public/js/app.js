@@ -2327,6 +2327,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -2343,6 +2374,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     prev_page_url: '',
                     to: '',
                     total: ''
+                },
+                filters: {
+                    tags: {
+                        selected: '',
+                        existing: {}
+                    }
                 }
             }
         };
@@ -2350,6 +2387,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     mounted: function mounted() {
         this.loadPictures('picture');
+        this.loadTags();
     },
 
 
@@ -2371,6 +2409,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get(url).then(function (response) {
                 _this.picture.items = response.data.data;
                 _this.setPicturePaginateInfo(response.data);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        loadTags: function loadTags() {
+            var _this2 = this;
+
+            axios.get('/tag').then(function (response) {
+                response.data.forEach(function (tag) {
+                    var slug = tag.slug;
+                    var obj = {};
+                    obj[slug] = tag.name;
+                    Object.assign(_this2.picture.filters.tags.existing, obj);
+                });
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        filterPictures: function filterPictures() {
+            axios.get('/picture', {
+                params: {
+                    tags: this.picture.filters.tags.selected
+                }
+            }).then(function (response) {
+                console.log(response.data);
             }).catch(function (error) {
                 console.log(error);
             });
@@ -37325,7 +37388,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container index-picture-component" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card card-default" }, [
           _c("div", { staticClass: "card-header" }, [_vm._v("Brawse")]),
           _vm._v(" "),
@@ -37438,6 +37501,63 @@ var render = function() {
                   ])
                 ])
               : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "card card-default" }, [
+          _c("div", { staticClass: "card-header" }, [_vm._v("Filters")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "form",
+                {
+                  attrs: { id: "form-" + this._uid },
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.filterPictures($event)
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("tags-input", {
+                        attrs: {
+                          "element-id": "tags",
+                          "input-class": "form-control",
+                          existingTags: _vm.picture.filters.tags.existing,
+                          typeahead: true,
+                          "only-existing-tags": true
+                        },
+                        model: {
+                          value: _vm.picture.filters.tags.selected,
+                          callback: function($$v) {
+                            _vm.$set(_vm.picture.filters.tags, "selected", $$v)
+                          },
+                          expression: "picture.filters.tags.selected"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Filter Pictures")]
+                  )
+                ]
+              )
+            ])
           ])
         ])
       ])

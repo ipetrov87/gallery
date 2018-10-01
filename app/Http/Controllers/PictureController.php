@@ -22,8 +22,17 @@ class PictureController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()){
-            $page = Picture::paginate(6);
-            return $page;
+            $pictures = new Picture;
+            
+            if ($request->has('tags')) {
+                // $slugs = "'" . implode("','", $request->get('tags')) ."'";
+                // return $slugs;
+                // $pictures = $pictures->tags()->whereIn('slug', [$slugs]);
+                // $pictures = $pictures->tags();
+            }
+
+            return $pictures->paginate(6);
+            // return new Picture->tags()->$pictures->paginate(6);
         }
 
         return view('picture.index');
